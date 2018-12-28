@@ -1,0 +1,21 @@
+* C:\Users\Joakim\Documents\Elektronikk og synth\LTspice\OTA-gain-test.asc
+XU17 0 N002 N001 N009 N003 LT1001
+R37 N004 N005 18k
+V6 N001 0 15
+V7 N009 0 -15
+XU18 P001 N008 P002 N005 N006 N001 N009 0 NC_01 HALF13700
+I3 0 N004 5.4mA
+V8 N007 0 5 AC 1
+R2 P002 0 510
+R3 P001 N001 12k
+R4 0 N008 510
+R1 N007 N008 27k
+R5 N003 N002 22.5k
+R6 N006 0 10k
+.lib LTC.lib
+.lib lm13700.sub
+;tran 0 0.01 0 0.1
+.dc i3 0 -2mA 500uA
+.lib LTC.lib
+.backanno
+.end

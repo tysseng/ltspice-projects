@@ -1,0 +1,22 @@
+Circuit: * C:\Users\Joakim\Downloads\VCF CV gain.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Tue Oct 24 16:16:18 2017
+Total elapsed time: 0.115 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 109
+traniter = 74
+tranpoints = 38
+accept = 38
+rejected = 0
+matrix size = 11
+fillins = 2
+solver = Normal
+Matrix Compiler1: 588 bytes object code size
+Matrix Compiler2: off  [0.2]/0.3/0.3
+
+

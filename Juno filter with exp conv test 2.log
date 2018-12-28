@@ -1,0 +1,58 @@
+Circuit: * C:\Users\Joakim\Documents\Elektronikk og synth\LTspice\Juno filter with exp conv test 2.asc
+
+WARNING: Less than two connections to node N004.  This node is used by R43.
+.dc sweep increment has wrong sign -- fixing...
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+Gmin = 1.12868e-006
+vernier = 0.166667
+vernier = 0.222222
+Gmin = 7.1166e-007
+vernier = 0.296296
+vernier = 0.395061
+Gmin = 3.44584e-007
+vernier = 0.526748
+Gmin = 1.12543e-007
+vernier = 0.702331
+vernier = 0.936441
+Gmin = 1.83815e-008
+vernier = 1
+Gmin = 2.02486e-009
+Gmin = 2.17417e-010
+Gmin = 2.3345e-011
+Gmin = 2.50665e-012
+Gmin = 2.69149e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+
+Date: Sat Jan 13 22:57:17 2018
+Total elapsed time: 0.614 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 1348
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 149
+fillins = 273
+solver = Normal
+Thread vector: 134.3/88.5[8] 0.0/0.0[0] 46.1/25.3[8] 1.4/4.7[1]  2592/500
+Matrix Compiler1:    1533 opcodes  14.6/13.6/[2.5]
+Matrix Compiler2: 20.69 KB object code size  7.1/6.3/[1.9]
+
+
