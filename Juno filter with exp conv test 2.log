@@ -1,7 +1,6 @@
-Circuit: * C:\Users\Joakim\Documents\Elektronikk og synth\LTspice\Juno filter with exp conv test 2.asc
+Circuit: * C:\git\ltspice-projects\Juno filter with exp conv test 2.asc
 
-WARNING: Less than two connections to node N004.  This node is used by R43.
-.dc sweep increment has wrong sign -- fixing...
+WARNING: Less than two connections to node 15V.  This node is used by V4.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
 Gmin = 10
@@ -12,47 +11,42 @@ Gmin = 0.00132923
 Gmin = 0.000142725
 Gmin = 1.5325e-005
 Gmin = 1.6455e-006
-vernier = 0.5
-vernier = 0.25
-vernier = 0.125
-Gmin = 1.12868e-006
-vernier = 0.166667
-vernier = 0.222222
-Gmin = 7.1166e-007
-vernier = 0.296296
-vernier = 0.395061
-Gmin = 3.44584e-007
-vernier = 0.526748
-Gmin = 1.12543e-007
-vernier = 0.702331
-vernier = 0.936441
-Gmin = 1.83815e-008
-vernier = 1
-Gmin = 2.02486e-009
-Gmin = 2.17417e-010
-Gmin = 2.3345e-011
-Gmin = 2.50665e-012
-Gmin = 2.69149e-013
+Gmin = 1.76685e-007
+Gmin = 1.89714e-008
+Gmin = 2.03704e-009
+Gmin = 2.18725e-010
+Gmin = 2.34854e-011
+Gmin = 2.52173e-012
+Gmin = 2.70769e-013
 Gmin = 0
 Gmin stepping succeeded in finding the operating point.
 
+Ignoring empty pin current: Ix(u10:1)
+Ignoring empty pin current: Ix(u10:2)
+Ignoring empty pin current: Ix(u13:1)
+Ignoring empty pin current: Ix(u13:2)
+Ignoring empty pin current: Ix(u10:1)
+Ignoring empty pin current: Ix(u10:2)
+Ignoring empty pin current: Ix(u13:1)
+Ignoring empty pin current: Ix(u13:2)
+.step cv=0
+.step cv=5
 
-Date: Sat Jan 13 22:57:17 2018
-Total elapsed time: 0.614 seconds.
+Date: Sat Dec 29 14:05:36 2018
+Total elapsed time: 0.985 seconds.
 
 tnom = 27
 temp = 27
 method = trap
-totiter = 1348
+totiter = 564
 traniter = 0
 tranpoints = 0
 accept = 0
 rejected = 0
-matrix size = 149
-fillins = 273
+matrix size = 140
+fillins = 216
 solver = Normal
-Thread vector: 134.3/88.5[8] 0.0/0.0[0] 46.1/25.3[8] 1.4/4.7[1]  2592/500
-Matrix Compiler1:    1533 opcodes  14.6/13.6/[2.5]
-Matrix Compiler2: 20.69 KB object code size  7.1/6.3/[1.9]
+Matrix Compiler1:    1363 opcodes
+Matrix Compiler2: 18.43 KB object code size  4.3/4.3/[1.5]
 
 

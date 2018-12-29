@@ -26,8 +26,8 @@ V2 0 -15V 15
 C7 N028 N026 10µ V=63 Irms=200m Rser=1.3 Lser=0
 R19 N036 0 2k7
 C8 N036 0 220µ V=63 Irms=200m Rser=1.3 Lser=0
-V3 Audio 0 SINE(0 5 50) AC 1
-V4 cv 0 3
+V3 Audio 0 SINE(0 5 500) AC 1
+V4 cv 0 4
 XU2 N006 N004 N005 opamp Aol=100K GBW=10Meg
 XU5 N014 N012 N013 opamp Aol=100K GBW=10Meg
 XU6 N002 N008 N003 opamp Aol=100K GBW=10Meg
@@ -36,8 +36,8 @@ R10 N012 N009 0.1
 R11 N005 N006 10k
 R12 N014 N006 50k
 R13 N014 N013 10k
-R14 N008 N005 2.5k
-R15 N002 N013 2.5k
+R14 N008 N005 10k
+R15 N002 N013 10k
 R16 0 N008 330k
 R22 N002 N003 330k
 C5 N010 N003 10µ V=63 Irms=200m Rser=1.3 Lser=0
@@ -53,7 +53,7 @@ R28 P001 N019 50k
 XU1 0 15V P001 pot_lin Rtot=10K wiper=0.5
 Q12 N033 0 N034 0 2N3906
 R30 N035 N034 3k3
-V5 N035 0 5
+V5 N035 0 3
 R29 N031 N033 10k
 R31 N013 N019 200
 R39 N005 N018 200
@@ -80,8 +80,10 @@ XU4 15V -15V P002 pot_lin Rtot=220K wiper=0.1
 .lib opamp.sub
 .lib LTC.lib
 .lib lm13700.sub
-* XM8 moog ladder filter\n0.5V octave\n25Hz to 13kHz with U4 at 0.1\nTODO: Test filter for self oscillation
-.tran 0 0.05 0
+* XM8 moog ladder filter\n0.5V octave\n13Hz to 13kHz with U4 at 0.1\nTODO: Test filter for self oscillation
+;tran 0 0.05 0
+;tran 0 0.1 0
+.ac oct 100 10 20000
 .lib potentiometer_standard.lib
 .backanno
 .end
