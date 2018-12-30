@@ -83,13 +83,13 @@ XU18 RESO_CV N009 RESO_CV pot_lin Rtot=20K wiper=.5
 .lib LTC.lib
 .lib lm13700.sub
 * Resonance
-.tran 0 0.1 0 0.1
+;tran 0 0.1 0 0.1
 .lib opamp.sub
 * Juno 106 CV converter
 * Opamp: 3.84V to -6.17V (0 to 5V cv) \ni.e. 10V output range
 .step param acv 0V 5V 1V
 * 21.92k gir 17.9mV
-;ac oct 100 0.1 20000
+.ac oct 100 0.1 20000
 * Weird, but i need a 20k pot here to get \napprox 22k total here.
 * No change to voltage if\nR34 and R35 are merged\nand C7 removed.
 * Must recheck these values, external to circuit
@@ -100,7 +100,7 @@ XU18 RESO_CV N009 RESO_CV pot_lin Rtot=20K wiper=.5
 * Resonance
 * 10k + 27k for 0-10V cv
 * Summing point\nUse 100k resistor
-* Audio:\nMax 10v p.p: R26: 120k, R27: 39k, R38: 3.3k\nMax 20v p.p: R26: 220k, R27: 56k, R38: 6.8k
+* Audio:\nMax 10v p.p:\n   R26: 120k (or 82k + 50k pot), R27: 39k, R38: 3.3k\nMax 20v p.p:\n   R26: 220k (or 100k + 200k pot), R27: 56k, R38: 6.8k
 .lib potentiometer_standard.lib
 .backanno
 .end
