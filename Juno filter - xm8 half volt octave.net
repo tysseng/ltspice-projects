@@ -1,0 +1,106 @@
+* C:\git\ltspice-projects\Juno filter - xm8 half volt octave.asc
+R1 N017 N012 4.7k
+R2 0 N017 560
+C1 N026 0 270pF
+R3 N013 N017 68k
+R4 cutoff_cc N022 18k
+R5 N018 N013 68k
+R6 0 N018 560
+C2 N027 0 270pF
+R7 N014 N018 68k
+R8 cutoff_cc N023 18k
+R9 N019 N014 68k
+R10 0 N019 560
+C3 N028 0 270pF
+R11 N015 N019 68k
+R12 cutoff_cc N024 18k
+R13 N020 N015 68k
+R14 0 N020 560
+C4 N029 0 270pF
+R15 N016 N020 68k
+R16 cutoff_cc N025 18k
+R17 N021 N016 100k
+R18 0 N021 1.5k
+R19 N010 0 1.5k
+XU1 NC_01 0 N017 N022 N026 15V -15V 0 NC_02 HALF13700
+XU2 NC_03 0 N018 N023 N027 15V -15V 0 NC_04 HALF13700
+XU5 NC_05 0 N019 N024 N028 15V -15V 0 NC_06 HALF13700
+XU7 NC_07 N010 N021 resonance_cc N017 15V -15V 0 NC_08 HALF13700
+XU9 0 0 N020 N025 N029 15V -15V 0 NC_09 HALF13700
+Q2 resonance_cc 0 P001 0 PNP
+R21 P001 N009 6.8k
+XU11 NC_10 P002 N034 N031 N035 15V -15V 0 NC_11 HALF13700
+R23 N034 0 560
+R24 P002 0 560
+R25 N034 N033 4.7k
+R26 N035 0 220k
+C6 P003 N016 1µ
+R27 N032 P003 39k
+R28 N033 N036 2.2MEG
+R31 N033 N032 82k
+R32 N010 N012 24k
+R34 N004 N003 10k
+R35 N005 N004 8k2
+R36 0 N005 560
+C7 N004 0 0.1µ
+Q3 N006 0 N007 0 PNP
+Q4 cutoff_cc N005 N007 0 PNP
+R40 N007 N008 1.5k
+R41 -15V N006 1.5MEG
+C8 N006 N008 47p
+R42 N001 -15V 390k
+R43 N001 FREQ_CV 49.9k
+R44 N002 N001 100k
+V4 15V 0 15
+V5 0 -15V 15
+XU10 N006 0 N008 opamp Aol=100K GBW=10Meg
+XU13 N001 0 N002 opamp Aol=100K GBW=10Meg
+R20 N001 P004 100k
+XU14 15V -15V P004 pot_lin Rtot=220K wiper=0.5
+XU3 N013 N026 N013 opamp Aol=100K GBW=10Meg
+XU4 N014 N027 N014 opamp Aol=100K GBW=10Meg
+XU6 N015 N028 N015 opamp Aol=100K GBW=10Meg
+XU8 N016 N029 N016 opamp Aol=100K GBW=10Meg
+XU12 OUT N035 OUT opamp Aol=100K GBW=10Meg
+XU15 N003 N002 N002 pot_lin Rtot=20K wiper=.404
+Q1 N031 0 P005 0 PNP
+R33 P005 N030 22k
+R37 N030 VCA_CV 10k
+C9 0 N030 100n
+V6 FREQ_CV 0 5
+V7 VCA_CV 0 5
+V12 RESO_CV 0 0
+V1 IN 0 SINE(0 5 50) AC 1
+XU16 15V -15V N036 pot_lin Rtot=100K wiper=.41
+R29 IN N011 100k
+XU17 N011 0 N012 opamp Aol=100K GBW=10Meg
+C5 N035 0 47p
+R38 N011 N012 3.3k
+XU18 RESO_CV N009 RESO_CV pot_lin Rtot=20K wiper=.5
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.lib LTC.lib
+.lib lm13700.sub
+* Resonance
+.tran 0 0.1 0 0.1
+.lib opamp.sub
+* Juno 106 CV converter
+* Opamp: 3.84V to -6.17V (0 to 5V cv) \ni.e. 10V output range
+.step param acv 0V 5V 1V
+* 21.92k gir 17.9mV
+;ac oct 100 0.1 20000
+* Weird, but i need a 20k pot here to get \napprox 22k total here.
+* No change to voltage if\nR34 and R35 are merged\nand C7 removed.
+* Must recheck these values, external to circuit
+* 1V/Oct summing point.\n50k inp. resistor gives\n0.5V/oct
+* TODO: 0-5V CV for output amp
+* TODO: 5V Resonance control
+* TODO: Set default non-tuned frequency\nto same as moog filter.
+* Resonance
+* 10k + 27k for 0-10V cv
+* Summing point\nUse 100k resistor
+* Audio:\nMax 10v p.p: R26: 120k, R27: 39k, R38: 3.3k\nMax 20v p.p: R26: 220k, R27: 56k, R38: 6.8k
+.lib potentiometer_standard.lib
+.backanno
+.end

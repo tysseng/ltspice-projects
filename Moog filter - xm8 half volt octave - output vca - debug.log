@@ -1,4 +1,4 @@
-Circuit: * C:\git\ltspice-projects\Moog filter - xm8 half volt octave - output vca.asc
+Circuit: * C:\git\ltspice-projects\Moog filter - xm8 half volt octave - output vca - debug.asc
 
 Warning: Multiple definitions of model "pnpl" Type: BJT
 Warning: Multiple definitions of model "npnv" Type: BJT
@@ -49,22 +49,22 @@ Ignoring empty pin current: Ix(u10:2)
 Ignoring empty pin current: Ix(u12:1)
 Ignoring empty pin current: Ix(u12:2)
 
-Date: Sun Dec 30 15:27:03 2018
-Total elapsed time: 0.822 seconds.
+Date: Sun Dec 30 14:42:50 2018
+Total elapsed time: 0.568 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 4111
-traniter = 3550
-tranpoints = 1772
-accept = 1392
-rejected = 380
-matrix size = 114
+totiter = 2771
+traniter = 2210
+tranpoints = 1106
+accept = 1075
+rejected = 31
+matrix size = 113
 fillins = 171
 solver = Normal
-Thread vector: 37.4/19.9[5] 32.8/9.9[5] 11.8/6.1[5] 1.0/1.4[1]  2592/500
-Matrix Compiler1: 17.61 KB object code size  9.9/6.0/[2.9]
-Matrix Compiler2: 13.50 KB object code size  4.5/4.9/[2.1]
+Thread vector: 41.1/18.9[5] 31.8/9.3[5] 13.6/8.4[5] 1.1/1.6[1]  2592/500
+Matrix Compiler1: 17.56 KB object code size  9.5/5.7/[2.5]
+Matrix Compiler2: 13.43 KB object code size  4.7/5.0/[1.9]
 
 
