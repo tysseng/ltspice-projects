@@ -1,6 +1,7 @@
 Circuit: * C:\git\ltspice-projects\Juno filter - xm8 half volt octave - debug.asc
 
-WARNING: Less than two connections to node N007.  This node is used by Q4.
+WARNING: Less than two connections to node NC_12.  This node is used by R:U24:2.
+WARNING: Less than two connections to node NC_13.  This node is used by R:U18:2.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
 Gmin = 10
@@ -39,6 +40,10 @@ Ignoring empty pin current: Ix(u19:1)
 Ignoring empty pin current: Ix(u19:2)
 Ignoring empty pin current: Ix(u20:1)
 Ignoring empty pin current: Ix(u20:2)
+Ignoring empty pin current: Ix(u12:1)
+Ignoring empty pin current: Ix(u12:2)
+Ignoring empty pin current: Ix(u22:1)
+Ignoring empty pin current: Ix(u22:2)
 Ignoring empty pin current: Ix(u10:1)
 Ignoring empty pin current: Ix(u10:2)
 Ignoring empty pin current: Ix(u13:1)
@@ -57,6 +62,10 @@ Ignoring empty pin current: Ix(u19:1)
 Ignoring empty pin current: Ix(u19:2)
 Ignoring empty pin current: Ix(u20:1)
 Ignoring empty pin current: Ix(u20:2)
+Ignoring empty pin current: Ix(u12:1)
+Ignoring empty pin current: Ix(u12:2)
+Ignoring empty pin current: Ix(u22:1)
+Ignoring empty pin current: Ix(u22:2)
 .step acv=0
 .step acv=1
 .step acv=2
@@ -64,21 +73,22 @@ Ignoring empty pin current: Ix(u20:2)
 .step acv=4
 .step acv=5
 
-Date: Sat Jan 12 21:16:46 2019
-Total elapsed time: 2.033 seconds.
+Date: Mon Jan 14 21:28:38 2019
+Total elapsed time: 2.400 seconds.
 
 tnom = 27
 temp = 27
-method = trap
-totiter = 577
-traniter = 0
-tranpoints = 0
-accept = 0
-rejected = 0
-matrix size = 124
-fillins = 141
+method = modified trap
+totiter = 1129
+traniter = 562
+tranpoints = 267
+accept = 205
+rejected = 62
+matrix size = 131
+fillins = 176
 solver = Normal
-Matrix Compiler1:     807 opcodes
-Matrix Compiler2: 14.76 KB object code size  3.7/3.4/[1.2]
+Thread vector: 89.9/54.7[8] 64.8/23.9[8] 32.9/19.9[8] 1.6/4.9[1]  2592/500
+Matrix Compiler1: 15.90 KB object code size  10.0/5.5/[2.9]
+Matrix Compiler2: 15.89 KB object code size  6.1/6.0/[2.0]
 
 

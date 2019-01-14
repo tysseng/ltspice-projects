@@ -1,0 +1,123 @@
+* C:\git\ltspice-projects\Juno filter - xm8 half volt octave - correct juno VCA and RESO CVs.asc
+R1 N016 N011 4.7k
+R2 0 N016 560
+C1 N025 0 270pF
+R3 N012 N016 68k
+R4 cutoff_cc N021 10k
+R5 N017 N012 68k
+R6 0 N017 560
+C2 N026 0 270pF
+R7 N013 N017 68k
+R8 cutoff_cc N022 10k
+R9 N018 N013 68k
+R10 0 N018 560
+C3 N027 0 270pF
+R11 N014 N018 68k
+R12 cutoff_cc N023 10k
+R13 N019 N014 68k
+R14 0 N019 560
+C4 N028 0 270pF
+R15 N015 N019 68k
+R16 cutoff_cc N024 10k
+R17 N020 N015 100k
+R18 0 N020 1.5k
+R19 N009 0 1.5k
+XU1 NC_01 0 N016 N021 N025 15V -15V 0 NC_02 HALF13700
+XU2 NC_03 0 N017 N022 N026 15V -15V 0 NC_04 HALF13700
+XU5 NC_05 0 N018 N023 N027 15V -15V 0 NC_06 HALF13700
+XU7 NC_07 N009 N020 RESO_I_ABC N016 15V -15V 0 NC_08 HALF13700
+XU9 0 0 N019 N024 N028 15V -15V 0 NC_09 HALF13700
+XU11 NC_10 P001 N038 VCA_I_ABC N034 15V -15V 0 NC_11 HALF13700
+R23 N038 0 560
+R24 P001 0 560
+R25 N038 N037 4.7k
+C6 N036 N015 1µ
+R28 N037 N042 2.2MEG
+R31 N037 N033 82k
+R32 N009 N011 24k
+R34 N008 N007 10k
+R35 N002 N008 8k2
+R36 0 N002 560
+C7 N008 0 0.1µ
+Q3 N001 0 N004 0 PNP
+Q4 cutoff_cc N002 N004 0 PNP
+R40 N004 N006 1.5k
+R41 -15V N001 1.5MEG
+C8 N001 N006 47p
+R42 N003 -15V 390k
+R43 N003 FREQ_CV 49.9k
+R44 N005 N003 100k
+V4 15V 0 15
+V5 0 -15V 15
+XU10 N001 0 N006 opamp Aol=100K GBW=10Meg
+XU13 N003 0 N005 opamp Aol=100K GBW=10Meg
+R20 N003 P002 100k
+XU14 15V -15V P002 pot_lin Rtot=220K wiper=1
+XU3 N012 N025 N012 opamp Aol=100K GBW=10Meg
+XU4 N013 N026 N013 opamp Aol=100K GBW=10Meg
+XU6 N014 N027 N014 opamp Aol=100K GBW=10Meg
+XU8 N015 N028 N015 opamp Aol=100K GBW=10Meg
+XU15 N007 N005 N005 pot_lin Rtot=20K wiper=.404
+Q1 VCA_I_ABC 0 P003 0 PNP
+R33 P003 N031 22k
+R37 N031 N030 10k
+C9 0 N031 100n
+V6 FREQ_CV 0 10
+V7 VCA_CV 0 5
+V12 RESO_CV 0 0
+V1 IN 0 SINE(0 10 5000) AC 1
+XU16 15V -15V N042 pot_lin Rtot=100K wiper=.41
+R29 IN N010 100k
+XU17 N010 0 N011 opamp Aol=100K GBW=10Meg
+R38 N010 N011 3.3k
+XU19 N034 0 N035 opamp Aol=100K GBW=10Meg
+XU20 N032 0 OUT opamp Aol=100K GBW=10Meg
+R22 N034 N035 47k
+R30 N032 OUT 82k
+R39 N035 N032 47k
+C5 OUT N032 22p
+R26 P004 N029 470k
+XU12 N029 VCA_CV N030 opamp Aol=100K GBW=10Meg
+R45 N029 N030 10k
+R46 N029 0 10k
+XU21 0 -15V P004 pot_lin Rtot=10K wiper=0.15
+Q5 RESO_I_ABC 0 P005 0 PNP
+R47 P005 N041 27k
+R49 P006 N039 470k
+XU22 N039 RESO_CV N040 opamp Aol=100K GBW=10Meg
+R50 N039 N040 10k
+R51 N039 0 10k
+XU23 0 -15V P006 pot_lin Rtot=10K wiper=0.15
+XU24 N040 NC_12 N041 pot_lin Rtot=20K wiper=1
+XU18 N036 NC_13 N033 pot_lin Rtot=50K wiper=.5
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.lib LTC.lib
+.lib lm13700.sub
+.tran 0 0.001 0 0.01
+.lib opamp.sub
+* Opamp: 3.84V to -6.17V (0 to 5V cv) \ni.e. 10V output range
+.step param acv 0V 5V 1V
+* 21.92k gir 17.9mV
+;ac oct 100 0.1 180000
+* Weird, but i need a 20k pot here to get \napprox 22k total here.
+* No change to voltage if\nR34 and R35 are merged\nand C7 removed.
+* Must recheck these values, external to circuit
+* 1V/Oct summing point.\n50k inp. resistor gives\n0.5V/oct
+* TODO: Set default non-tuned frequency\nto same as moog filter.
+* Summing point\nUse 100k resistor
+* Audio:\nMax 10v p.p
+* 24dB
+* 12dB
+* Switching: 4051 or 4066, both can use \n+/- 7.5V rails and switch within those. \nmax swing here at 20Vp.p is less than\n10Vpp.\n \nVishay DG419DY-E3 er +/-15V @11kr/stk (SPDT)
+* The cap here acts as a LP filter.\nWith 22p/82k we get a cutoff of about 50kHz.\nIt may be necessary to adjust this.
+;dc v7 0 5 0.01
+* VCA Gain (amplitude)
+* Tune to 0.25 to 0.27V\nat output of U12/U22 when CV is 0,\nsets I_abc to 0A when\nCV = 150mV
+* VCA offset
+* max -301uA
+* max -205 to -356uA
+.lib potentiometer_standard.lib
+.backanno
+.end
