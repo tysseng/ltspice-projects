@@ -1,7 +1,7 @@
 Circuit: * C:\git\ltspice-projects\Juno filter - xm8 half volt octave - debug.asc
 
-WARNING: Less than two connections to node NC_12.  This node is used by R:U24:2.
-WARNING: Less than two connections to node NC_13.  This node is used by R:U18:2.
+WARNING: Less than two connections to node NC_12.  This node is used by R:U18:2.
+WARNING: Less than two connections to node NC_13.  This node is used by R:U24:2.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
 Gmin = 10
@@ -73,22 +73,22 @@ Ignoring empty pin current: Ix(u22:2)
 .step acv=4
 .step acv=5
 
-Date: Mon Jan 14 21:28:38 2019
-Total elapsed time: 2.400 seconds.
+Date: Tue Jan 15 19:27:33 2019
+Total elapsed time: 6.161 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 1129
-traniter = 562
-tranpoints = 267
-accept = 205
-rejected = 62
-matrix size = 131
-fillins = 176
+totiter = 4770
+traniter = 4212
+tranpoints = 1852
+accept = 1406
+rejected = 446
+matrix size = 130
+fillins = 155
 solver = Normal
-Thread vector: 89.9/54.7[8] 64.8/23.9[8] 32.9/19.9[8] 1.6/4.9[1]  2592/500
-Matrix Compiler1: 15.90 KB object code size  10.0/5.5/[2.9]
-Matrix Compiler2: 15.89 KB object code size  6.1/6.0/[2.0]
+Thread vector: 88.3/46.6[8] 59.2/27.4[8] 37.5/19.5[8] 1.4/4.8[1]  2592/500
+Matrix Compiler1: 15.30 KB object code size  10.3/5.2/[2.7]
+Matrix Compiler2: 15.60 KB object code size  6.9/6.5/[2.1]
 
 
