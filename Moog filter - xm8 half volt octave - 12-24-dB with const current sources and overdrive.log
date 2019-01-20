@@ -1,4 +1,4 @@
-Circuit: * C:\git\ltspice-projects\Moog filter - xm8 half volt octave - 12-24-dB with const current sources.asc
+Circuit: * C:\git\ltspice-projects\Moog filter - xm8 half volt octave - 12-24-dB with const current sources and overdrive.asc
 
 Warning: Multiple definitions of model "pnpl" Type: BJT
 Warning: Multiple definitions of model "npnv" Type: BJT
@@ -66,44 +66,31 @@ Ignoring empty pin current: Ix(u16:1)
 Ignoring empty pin current: Ix(u16:2)
 Ignoring empty pin current: Ix(u18:1)
 Ignoring empty pin current: Ix(u18:2)
+.step ampl=4
+.step ampl=5
+.step ampl=6
+.step ampl=7
+.step ampl=8
+.step ampl=9
 .step ampl=10
 .step ampl=11
 .step ampl=12
-.step ampl=13
-.step ampl=14
-.step ampl=15
-.step ampl=16
-.step ampl=17
-.step ampl=18
-.step ampl=19
-.step ampl=20
-.step ampl=21
-.step ampl=22
-.step ampl=23
-.step ampl=24
-.step ampl=25
-.step ampl=26
-.step ampl=27
-.step ampl=28
-.step ampl=29
-.step ampl=30
 
-Date: Sun Jan 20 21:01:45 2019
-Total elapsed time: 14.264 seconds.
+Date: Sun Jan 20 21:14:13 2019
+Total elapsed time: 2.866 seconds.
 
 tnom = 27
 temp = 27
-method = modified trap
-totiter = 2798
-traniter = 2266
-tranpoints = 1134
-accept = 1092
-rejected = 42
+method = trap
+totiter = 538
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
 matrix size = 119
 fillins = 182
 solver = Normal
-Thread vector: 39.0/21.9[5] 22.3/7.7[5] 12.2/7.5[5] 1.0/1.3[1]  2592/500
-Matrix Compiler1: 18.28 KB object code size  7.1/4.4/[1.8]
-Matrix Compiler2: 14.17 KB object code size  5.0/5.3/[1.8]
+Matrix Compiler1:    1002 opcodes
+Matrix Compiler2: 14.17 KB object code size  3.4/3.6/[1.3]
 
 
