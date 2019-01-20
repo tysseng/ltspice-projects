@@ -1,22 +1,22 @@
 * C:\git\ltspice-projects\Juno filter - xm8 half volt octave - correct juno VCA and RESO CVs with const current sources.asc
 R1 N016 N011 4.7k
 R2 0 N016 560
-C1 N025 0 330pF
+C1 N025 0 270pF
 R3 N012 N016 68k
 R4 cutoff_cc N021 10k
 R5 N017 N012 68k
 R6 0 N017 560
-C2 N026 0 330pF
+C2 N026 0 270pF
 R7 N013 N017 68k
 R8 cutoff_cc N022 10k
 R9 N018 N013 68k
 R10 0 N018 560
-C3 N027 0 330pF
+C3 N027 0 270pF
 R11 N014 N018 68k
 R12 cutoff_cc N023 10k
 R13 N019 N014 68k
 R14 0 N019 560
-C4 N028 0 330pF
+C4 N028 0 270pF
 R15 N015 N019 68k
 R16 cutoff_cc N024 10k
 R17 N020 N015 100k
@@ -59,7 +59,7 @@ XU6 N014 N027 N014 opamp Aol=100K GBW=10Meg
 XU8 N015 N028 N015 opamp Aol=100K GBW=10Meg
 XU15 N007 N005 N005 pot_lin Rtot=20K wiper=.404
 Q1 N033 N030 N029 0 PNP
-V6 FREQ_CV 0 10
+V6 FREQ_CV 0 5
 V7 VCA_CV 0 5
 V12 RESO_CV 0 0
 V1 IN 0 SINE(0 5 5000) AC 1
@@ -88,6 +88,7 @@ R37 P003 RESO_CV 12k
 D2 N041 N040 D
 R45 RESO_I_ABC N044 10k
 XU24 P003 NC_13 N040 pot_lin Rtot=20K wiper=1
+R46 LIN_FM N001 150k
 .model D D
 .lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
 .model NPN NPN
@@ -95,11 +96,11 @@ XU24 P003 NC_13 N040 pot_lin Rtot=20K wiper=1
 .lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
 .lib LTC.lib
 .lib lm13700.sub
-.tran 0 0.01 0 0.01
+;tran 0 0.01 0 0.01
 .lib opamp.sub
 .step param acv 0V 5V 1V
 * 21.92k gir 17.9mV
-;ac oct 100 0.1 180000
+.ac oct 100 0.1 180000
 * Weird, but i need a 20k pot here to get \napprox 22k total here.
 * No change to voltage if\nR34 and R35 are merged\nand C7 removed.
 * 1V/Oct summing point.\n50k inp. resistor gives\n0.5V/oct
@@ -122,6 +123,7 @@ XU24 P003 NC_13 N040 pot_lin Rtot=20K wiper=1
 * max -205 to -356 uA on juno, \nmax -147 to -405 uA here.
 * Leaving out the 1Meg and\ntrimpots will give I_abc very\nclose to 0 but may not be\nperfect and thus not 100%\noff.
 * VCA trimming:\nSet FREQ_CV to 5V and use a 500Hz sine wave on the input.\nAdjust deadband pot to your liking. Set VCA_CV to 5V. Adjust VCA gain to get\nunity gain, adjust wave balance with VCA offset.
+* Yusynth uses a 1/10 ratio for \nlinear fm vs reference (100k \nvs 1M reference resistor).\nI chose the same ratio here,\nmust be tested in practice.
 .lib potentiometer_standard.lib
 .backanno
 .end

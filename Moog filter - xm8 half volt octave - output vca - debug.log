@@ -49,22 +49,22 @@ Ignoring empty pin current: Ix(u10:2)
 Ignoring empty pin current: Ix(u12:1)
 Ignoring empty pin current: Ix(u12:2)
 
-Date: Sun Dec 30 14:42:50 2018
-Total elapsed time: 0.568 seconds.
+Date: Sat Jan 19 21:38:01 2019
+Total elapsed time: 0.647 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 2771
-traniter = 2210
-tranpoints = 1106
-accept = 1075
-rejected = 31
+totiter = 4107
+traniter = 3548
+tranpoints = 1753
+accept = 1392
+rejected = 361
 matrix size = 113
-fillins = 171
+fillins = 169
 solver = Normal
-Thread vector: 41.1/18.9[5] 31.8/9.3[5] 13.6/8.4[5] 1.1/1.6[1]  2592/500
-Matrix Compiler1: 17.56 KB object code size  9.5/5.7/[2.5]
-Matrix Compiler2: 13.43 KB object code size  4.7/5.0/[1.9]
+Thread vector: 37.0/18.2[5] 31.7/9.9[5] 10.8/6.5[5] 0.9/1.1[1]  2592/500
+Matrix Compiler1: 17.48 KB object code size  9.9/6.0/[2.7]
+Matrix Compiler2: 13.40 KB object code size  4.0/4.7/[1.6]
 
 
