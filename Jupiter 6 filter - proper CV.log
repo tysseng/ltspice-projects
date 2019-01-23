@@ -4,7 +4,10 @@ WARNING: Less than two connections to node NC_11.  This node is used by R34.
 WARNING: Less than two connections to node NC_12.  This node is used by R18.
 WARNING: Less than two connections to node NC_14.  This node is used by Q:U7:N11.
 WARNING: Less than two connections to node NC_17.  This node is used by Q:U15:N11.
-WARNING: Less than two connections to node CUTOFF_CC.  This node is used by Q4.
+WARNING: Less than two connections to node NC_20.  This node is used by Q:U22:N11.
+WARNING: Less than two connections to node NC_23.  This node is used by Q:U24:N11.
+WARNING: Less than two connections to node NC_25.  This node is used by R62.
+WARNING: Less than two connections to node NC_26.  This node is used by R65.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
 Gmin = 10
@@ -69,24 +72,22 @@ Ignoring empty pin current: Ix(u20:1)
 Ignoring empty pin current: Ix(u20:2)
 Ignoring empty pin current: Ix(u21:1)
 Ignoring empty pin current: Ix(u21:2)
-.step freq_cv=0
-.step freq_cv=5
 
-Date: Tue Jan 01 14:55:47 2019
-Total elapsed time: 4.105 seconds.
+Date: Wed Jan 23 21:53:43 2019
+Total elapsed time: 0.612 seconds.
 
 tnom = 27
 temp = 27
 method = trap
-totiter = 551
+totiter = 527
 traniter = 0
 tranpoints = 0
 accept = 0
 rejected = 0
-matrix size = 153
-fillins = 228
+matrix size = 182
+fillins = 262
 solver = Normal
-Matrix Compiler1:    1128 opcodes
-Matrix Compiler2: 18.95 KB object code size  5.0/4.5/[1.7]
+Matrix Compiler1:    1311 opcodes
+Matrix Compiler2: 22.67 KB object code size  6.0/5.3/[1.9]
 
 

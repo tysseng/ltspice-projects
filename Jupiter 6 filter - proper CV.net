@@ -1,0 +1,157 @@
+* C:\git\ltspice-projects\Jupiter 6 filter - proper CV.asc
+R1 N033 N030 68k
+R2 0 N033 560
+C1 N040 0 330p
+R4 cutoff_cc N039 10k
+R5 N034 N024 68k
+R6 0 N034 560
+C2 N042 0 330p
+R8 cutoff_cc N041 10k
+R9 N035 N029 68k
+R10 0 N035 560
+C3 N044 0 330p
+R12 cutoff_cc N043 10k
+R13 N036 N026 68k
+R14 0 N036 560
+C4 N046 0 330p
+R16 cutoff_cc N045 10k
+XU1 NC_01 0 N033 N039 N040 15V -15V 0 NC_02 HALF13700
+XU2 NC_03 0 N034 N041 N042 15V -15V 0 NC_04 HALF13700
+XU5 NC_05 0 N035 N043 N044 15V -15V 0 NC_06 HALF13700
+XU9 NC_07 0 N036 N045 N046 15V -15V 0 NC_08 HALF13700
+XU11 NC_09 P001 N055 N050 N052 15V -15V 0 NC_10 HALF13700
+R23 N055 0 560
+R24 P001 0 560
+R25 N055 N054 4.7k
+C5 OUT N052 47p
+R26 OUT N052 91k
+C6 P002 N047 1µ
+R27 N053 P002 39k
+R28 N054 N056 2.2MEG
+R31 N054 N053 82k
+R3 N030 N022 100k
+R7 0 N037 33k
+R11 0 N037 10k
+R15 N018 N037 47k
+C7 N037 0 33p
+R33 N032 N020 56k
+R34 NC_11 N030 56k
+R35 N023 N032 100k
+R36 N029 N023 100k
+C8 N038 0 33p
+R37 N038 0 33k
+D2 N038 N048 D
+D3 N048 N038 D
+R38 N048 0 10k
+R39 N048 N026 47k
+R17 N047 N021 10k
+R18 NC_12 N029 10k
+XU7 NC_13 0 N025 N028 N023 15V -15V NC_14 NC_15 HALF13700
+R19 N026 N025 68k
+R40 0 N025 560
+R41 N021 N023 100k
+C9 N021 N023 5p
+XU15 NC_16 0 N019 N027 N022 15V -15V NC_17 NC_18 HALF13700
+R42 N024 N019 68k
+R43 0 N019 560
+R44 N020 N022 100k
+C10 N020 N022 5p
+R32 N006 N005 10k
+R45 N007 N006 8k2
+R46 0 N007 560
+C11 N006 0 0.1µ
+Q3 N009 0 N011 0 PNP
+Q4 cutoff_cc N007 N011 0 PNP
+R47 N011 N013 1.5k
+R48 -15V N009 1.5MEG
+C12 N009 N013 47p
+R49 N002 -15V 390k
+R50 N002 FREQ_CV 49.9k
+R51 N003 N002 100k
+V13 15V 0 15
+V14 0 -15V 15
+XU16 N009 0 N013 opamp Aol=100K GBW=10Meg
+XU17 N002 0 N003 opamp Aol=100K GBW=10Meg
+R52 N002 P003 100k
+XU18 15V -15V P003 pot_lin Rtot=220K wiper=0.61
+XU19 N005 N003 N003 pot_lin Rtot=20K wiper=0.7
+V15 FREQ_CV 0 2
+V16 VCA_CV 0 5
+V17 RESO_CV 0 0
+V18 IN 0 SINE(0 10 50) AC 1
+XU10 15V -15V N056 pot_lin Rtot=100K wiper=.437
+XU3 N024 N040 N024 opamp Aol=100K GBW=10Meg
+XU4 N022 N037 N030 opamp Aol=100K GBW=10Meg
+XU6 N020 N042 N020 opamp Aol=100K GBW=10Meg
+XU8 N026 N044 N026 opamp Aol=100K GBW=10Meg
+XU12 N021 N046 N021 opamp Aol=100K GBW=10Meg
+XU13 N052 0 OUT opamp Aol=100K GBW=10Meg
+XU14 N023 N038 N029 opamp Aol=100K GBW=10Meg
+Q1 N051 0 P004 0 PNP
+R20 P004 N049 2.7k
+R29 N049 VCA_CV 1.2k
+C13 0 N049 100n
+R30 N051 N050 1
+R53 N018 N019 33k
+R55 N004 RESO_CV 130k
+R56 0 N004 1.2k
+Q5 N008 0 N010 0 PNP
+Q6 resonance_cc N004 N010 0 PNP
+R57 N010 N012 1.5k
+R58 -15V N008 1.5MEG
+C15 N008 N012 47p
+XU20 N008 0 N012 opamp Aol=100K GBW=10Meg
+XU23 15V -15V N001 pot_lin Rtot=100K wiper=0.25
+R63 N004 N001 1MEG
+R64 N004 -15V 180k
+R21 IN N031 100k
+XU21 N031 0 N018 opamp Aol=100K GBW=10Meg
+R22 N031 N018 5k
+R54 N027 resonance_cc 10k
+R59 N028 resonance_cc 10k
+XU22 NC_19 0 0 N014 N016 15V -15V NC_20 NC_21 HALF13700
+R60 N014 resonance_cc 10k
+XU24 NC_22 0 0 N015 N017 15V -15V NC_23 NC_24 HALF13700
+R61 N015 resonance_cc 10k
+R62 NC_25 N024 56k
+R65 NC_26 N026 10k
+.model D D
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.lib LTC.lib
+.lib lm13700.sub
+;tran 0 1 0 0.1
+;tran 0 0.01 0 0.1
+;tran 0 0.01 0 0.1
+.ac oct 100 0.1 20000
+* R27:\n27k when tapped at 12dB with second stage connected\n50k when 24dB\n1Ohm when BP\n \nR31:\n82k for all but BP\n27k when BP
+;tran 0 1 0 0.1
+.lib opamp.sub
+* Juno 106 CV converter
+* Opamp: 3.84V to -6.17V (0 to 5V cv) \ni.e. 10V output range
+* 21.92k gir 17.9mV
+;ac oct 100 0.1 20000
+* Weird, but i need a 20k pot here to get \napprox 22k total here.
+* No change to voltage if\nR34 and R35 are merged\nand C7 removed.
+* Must recheck these values, external to circuit
+* 1V/Oct summing point.\n50k inp. resistor gives\n0.5V/oct
+* TODO: 0-5V CV for output amp
+* TODO: 5V Resonance control
+* TODO: Set default non-tuned frequency\nto same as moog filter.
+* Discovered missing feedback 33k
+.lib opamp.sub
+* Summing point\nUse 100k resistor
+* 20v p.p:\nR22: 5k, R26 91k, R27 39k (R29:1.2k, R20: 2.7k)
+* TODO: This acts as a LP filter\nand must be removed to reach\n20kHz
+* Wiper at 0.25 gives output of -124uA per I_abc.\nThis results in a response that has a 10.4dB \ndrop at the same frequency as the resonance top,\nwhich is similar to the Juno filter (not perfect, but\nmaybe close enough).\n \nThis setting gives min/max I_abc as follows:\n0V CV = -124uA, -1.5dB normal\n5V CV = -25.8uA, -12.7dB normal, +3.7dB peak, 16.5dB delta\n10.7V CV = -3.65uA, -21.4dB normal, +26.5dB peak, 48dB delta\n \nA linear approximation should then for example \ncover from 0 to -150uA (and be tuned in both \nends).
+* HP
+* LP
+* BP
+* LP
+* HP
+* BP
+.lib potentiometer_standard.lib
+.backanno
+.end
