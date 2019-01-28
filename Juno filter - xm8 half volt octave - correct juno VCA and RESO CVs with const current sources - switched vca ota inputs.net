@@ -59,7 +59,7 @@ XU6 N014 N027 N014 opamp Aol=100K GBW=10Meg
 XU8 N015 N028 N015 opamp Aol=100K GBW=10Meg
 XU15 N007 N005 N005 pot_lin Rtot=20K wiper=.404
 Q1 N032 N030 N029 0 PNP
-V6 FREQ_CV 0 10
+V6 FREQ_CV 0 5
 V7 VCA_CV 0 5
 V12 RESO_CV 0 0
 V1 IN 0 SINE(0 5 500) AC 1
@@ -72,7 +72,7 @@ R26 N031 N029 1MEG
 XU12 N029 0 N030 opamp Aol=100K GBW=10Meg
 XU21 0 -15V N031 pot_lin Rtot=10K wiper=0.5
 XU18 N035 NC_12 N033 pot_lin Rtot=50K wiper=0.32
-R21 N029 VCA_CV 15k
+R21 N029 VCA_CV 10k
 D1 N030 N029 D
 R27 VCA_I_ABC N032 10k
 Q2 N043 N040 N039 0 PNP
@@ -84,7 +84,7 @@ D2 N040 N039 D
 R45 RESO_I_ABC N043 10k
 XU24 P002 NC_13 N039 pot_lin Rtot=20K wiper=1
 R46 LIN_FM N001 150k
-XU20 N034 OUT OUT pot_lin Rtot=100K wiper=.18
+XU20 N034 OUT OUT pot_lin Rtot=100K wiper=.45
 C5 OUT N034 22p
 .model D D
 .lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
@@ -93,11 +93,11 @@ C5 OUT N034 22p
 .lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
 .lib LTC.lib
 .lib lm13700.sub
-;tran 0 0.01 0 0.01
+.tran 0 0.01 0 0.01
 .lib opamp.sub
 .step param acv 0V 5V 1V
 * 21.92k gir 17.9mV
-.ac oct 100 0.1 180000
+;ac oct 100 0.1 180000
 * Weird, but i need a 20k pot here to get \napprox 22k total here.
 * No change to voltage if\nR34 and R35 are merged\nand C7 removed.
 * 1V/Oct summing point.\n50k inp. resistor gives\n0.5V/oct
@@ -107,7 +107,7 @@ C5 OUT N034 22p
 * 24dB
 * 12dB
 * Switching: 4051 or 4066, both can use \n+/- 7.5V rails and switch within those. \nmax swing here at 20Vp.p is less than\n10Vpp.\n \nVishay DG419DY-E3 er +/-15V @11kr/stk (SPDT)
-* The cap here acts as a LP filter.\nWith 22p/82k we get a cutoff of about 90kHz????\nIt may be necessary to adjust this.
+* The cap here acts as a LP filter.\nWith 22p/82k we get a cutoff of about 90kHz????\nIt changes cutoff from 46kHz to 40kHz at 10V CV...\nIt may be necessary to adjust this.
 ;dc v12 0 5 0.01
 * VCA Gain (amplitude)
 * VCA offset
