@@ -6,6 +6,9 @@ WARNING: Less than two connections to node NC_02.  This node is used by Q:U8:N11
 WARNING: Less than two connections to node NC_05.  This node is used by Q:U6:N11.
 WARNING: Less than two connections to node NC_07.  This node is used by R:U20:2.
 WARNING: Less than two connections to node LIN_FM.  This node is used by R16.
+WARNING: Less than two connections to node NC_08.  This node is used by Q:U21:N11.
+WARNING: Less than two connections to node NC_10.  This node is used by R47.
+WARNING: Less than two connections to node OVERLOAD_CV.  This node is used by R50.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
 Gmin = 10
@@ -46,6 +49,12 @@ Ignoring empty pin current: Ix(u16:1)
 Ignoring empty pin current: Ix(u16:2)
 Ignoring empty pin current: Ix(u18:1)
 Ignoring empty pin current: Ix(u18:2)
+Ignoring empty pin current: Ix(u22:1)
+Ignoring empty pin current: Ix(u22:2)
+Ignoring empty pin current: Ix(u23:1)
+Ignoring empty pin current: Ix(u23:2)
+Ignoring empty pin current: Ix(u24:1)
+Ignoring empty pin current: Ix(u24:2)
 Ignoring empty pin current: Ix(u2:1)
 Ignoring empty pin current: Ix(u2:2)
 Ignoring empty pin current: Ix(u5:1)
@@ -66,28 +75,30 @@ Ignoring empty pin current: Ix(u16:1)
 Ignoring empty pin current: Ix(u16:2)
 Ignoring empty pin current: Ix(u18:1)
 Ignoring empty pin current: Ix(u18:2)
-.step ampl=1
-.step ampl=2
-.step ampl=3
+Ignoring empty pin current: Ix(u22:1)
+Ignoring empty pin current: Ix(u22:2)
+Ignoring empty pin current: Ix(u23:1)
+Ignoring empty pin current: Ix(u23:2)
+Ignoring empty pin current: Ix(u24:1)
+Ignoring empty pin current: Ix(u24:2)
 .step ampl=4
 .step ampl=5
 
-Date: Thu Feb 21 21:11:17 2019
-Total elapsed time: 2.796 seconds.
+Date: Sun Feb 24 20:49:27 2019
+Total elapsed time: 0.841 seconds.
 
 tnom = 27
 temp = 27
-method = modified trap
-totiter = 2650
-traniter = 2088
-tranpoints = 1045
-accept = 1045
+method = trap
+totiter = 594
+traniter = 0
+tranpoints = 0
+accept = 0
 rejected = 0
-matrix size = 119
-fillins = 182
+matrix size = 143
+fillins = 234
 solver = Normal
-Thread vector: 38.1/16.6[5] 26.6/8.7[5] 13.3/6.5[5] 1.0/1.6[1]  2592/500
-Matrix Compiler1: 18.22 KB object code size  8.0/5.5/[2.3]
-Matrix Compiler2: 14.20 KB object code size  4.7/5.1/[1.7]
+Matrix Compiler1:    1263 opcodes
+Matrix Compiler2: 17.51 KB object code size  4.3/4.3/[1.6]
 
 
