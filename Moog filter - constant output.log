@@ -1,11 +1,13 @@
-Circuit: * C:\git\ltspice-projects\Moog filter - xm8 half volt octave - 12-24-dB with const current sources - debug.asc
+Circuit: * C:\git\ltspice-projects\Moog filter - constant output.asc
 
 Warning: Multiple definitions of model "pnpl" Type: BJT
 Warning: Multiple definitions of model "npnv" Type: BJT
 WARNING: Less than two connections to node NC_02.  This node is used by Q:U8:N11.
-WARNING: Less than two connections to node NC_05.  This node is used by Q:U6:N11.
-WARNING: Less than two connections to node NC_07.  This node is used by R:U20:2.
+WARNING: Less than two connections to node VCA_I_ABC.  This node is used by R43.
+WARNING: Less than two connections to node NC_04.  This node is used by R:U20:2.
 WARNING: Less than two connections to node LIN_FM.  This node is used by R16.
+WARNING: Less than two connections to node NC_05.  This node is used by Q:U21:N11.
+WARNING: Less than two connections to node NC_07.  This node is used by R47.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
 Gmin = 10
@@ -46,6 +48,10 @@ Ignoring empty pin current: Ix(u16:1)
 Ignoring empty pin current: Ix(u16:2)
 Ignoring empty pin current: Ix(u18:1)
 Ignoring empty pin current: Ix(u18:2)
+Ignoring empty pin current: Ix(u22:1)
+Ignoring empty pin current: Ix(u22:2)
+Ignoring empty pin current: Ix(u23:1)
+Ignoring empty pin current: Ix(u23:2)
 Ignoring empty pin current: Ix(u2:1)
 Ignoring empty pin current: Ix(u2:2)
 Ignoring empty pin current: Ix(u5:1)
@@ -66,23 +72,27 @@ Ignoring empty pin current: Ix(u16:1)
 Ignoring empty pin current: Ix(u16:2)
 Ignoring empty pin current: Ix(u18:1)
 Ignoring empty pin current: Ix(u18:2)
+Ignoring empty pin current: Ix(u22:1)
+Ignoring empty pin current: Ix(u22:2)
+Ignoring empty pin current: Ix(u23:1)
+Ignoring empty pin current: Ix(u23:2)
 
-Date: Sun Mar 24 20:24:34 2019
-Total elapsed time: 0.494 seconds.
+Date: Sun Mar 24 20:41:38 2019
+Total elapsed time: 0.639 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 2734
-traniter = 2202
-tranpoints = 1102
-accept = 1077
-rejected = 25
-matrix size = 119
-fillins = 182
+totiter = 4922
+traniter = 4357
+tranpoints = 2090
+accept = 1678
+rejected = 412
+matrix size = 129
+fillins = 212
 solver = Normal
-Thread vector: 38.4/18.1[5] 22.5/7.3[5] 13.6/5.8[5] 1.0/1.2[1]  2592/500
-Matrix Compiler1: 18.28 KB object code size  7.0/4.0/[2.1]
-Matrix Compiler2: 14.17 KB object code size  4.8/5.2/[1.7]
+Thread vector: 39.2/16.3[5] 22.2/7.1[5] 14.1/6.0[5] 1.1/1.4[1]  2592/500
+Matrix Compiler1: 20.47 KB object code size  7.7/4.6/[2.1]
+Matrix Compiler2: 15.44 KB object code size  5.1/5.7/[1.9]
 
 

@@ -8,7 +8,6 @@ WARNING: Less than two connections to node NC_07.  This node is used by R:U20:2.
 WARNING: Less than two connections to node LIN_FM.  This node is used by R16.
 WARNING: Less than two connections to node NC_08.  This node is used by Q:U21:N11.
 WARNING: Less than two connections to node NC_10.  This node is used by R47.
-WARNING: Less than two connections to node OVERLOAD_CV.  This node is used by R50.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
 Gmin = 10
@@ -53,8 +52,6 @@ Ignoring empty pin current: Ix(u22:1)
 Ignoring empty pin current: Ix(u22:2)
 Ignoring empty pin current: Ix(u23:1)
 Ignoring empty pin current: Ix(u23:2)
-Ignoring empty pin current: Ix(u24:1)
-Ignoring empty pin current: Ix(u24:2)
 Ignoring empty pin current: Ix(u2:1)
 Ignoring empty pin current: Ix(u2:2)
 Ignoring empty pin current: Ix(u5:1)
@@ -79,26 +76,25 @@ Ignoring empty pin current: Ix(u22:1)
 Ignoring empty pin current: Ix(u22:2)
 Ignoring empty pin current: Ix(u23:1)
 Ignoring empty pin current: Ix(u23:2)
-Ignoring empty pin current: Ix(u24:1)
-Ignoring empty pin current: Ix(u24:2)
 .step ampl=4
 .step ampl=5
 
-Date: Sun Feb 24 20:49:27 2019
-Total elapsed time: 0.841 seconds.
+Date: Sun Mar 24 21:21:09 2019
+Total elapsed time: 1.258 seconds.
 
 tnom = 27
 temp = 27
-method = trap
-totiter = 594
-traniter = 0
-tranpoints = 0
-accept = 0
-rejected = 0
-matrix size = 143
-fillins = 234
+method = modified trap
+totiter = 4609
+traniter = 4028
+tranpoints = 1893
+accept = 1622
+rejected = 271
+matrix size = 142
+fillins = 232
 solver = Normal
-Matrix Compiler1:    1263 opcodes
-Matrix Compiler2: 17.51 KB object code size  4.3/4.3/[1.6]
+Thread vector: 50.4/16.3[7] 36.2/10.8[7] 18.2/7.2[7] 1.4/1.7[1]  2592/500
+Matrix Compiler1: 22.85 KB object code size  11.2/6.6/[2.6]
+Matrix Compiler2: 17.36 KB object code size  5.4/5.3/[2.2]
 
 
