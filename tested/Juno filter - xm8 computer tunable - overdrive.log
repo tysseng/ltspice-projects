@@ -1,8 +1,8 @@
-Circuit: * C:\git\ltspice-projects\Juno filter - xm8 computer tunable - no vca.asc
+Circuit: * C:\git\ltspice-projects\Juno filter - xm8 computer tunable - overdrive.asc
 
-WARNING: Less than two connections to node VCA_I_ABC.  This node is used by R27.
-WARNING: Less than two connections to node NC_10.  This node is used by R:U24:2.
+WARNING: Less than two connections to node NC_12.  This node is used by R:U24:2.
 WARNING: Less than two connections to node LIN_FM.  This node is used by R46.
+WARNING: Less than two connections to node NC_13.  This node is used by Q:U21:N11.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
 Gmin = 10
@@ -43,6 +43,10 @@ Ignoring empty pin current: Ix(u12:1)
 Ignoring empty pin current: Ix(u12:2)
 Ignoring empty pin current: Ix(u22:1)
 Ignoring empty pin current: Ix(u22:2)
+Ignoring empty pin current: Ix(u23:1)
+Ignoring empty pin current: Ix(u23:2)
+Ignoring empty pin current: Ix(u18:1)
+Ignoring empty pin current: Ix(u18:2)
 Ignoring empty pin current: Ix(u10:1)
 Ignoring empty pin current: Ix(u10:2)
 Ignoring empty pin current: Ix(u13:1)
@@ -63,23 +67,33 @@ Ignoring empty pin current: Ix(u12:1)
 Ignoring empty pin current: Ix(u12:2)
 Ignoring empty pin current: Ix(u22:1)
 Ignoring empty pin current: Ix(u22:2)
+Ignoring empty pin current: Ix(u23:1)
+Ignoring empty pin current: Ix(u23:2)
+Ignoring empty pin current: Ix(u18:1)
+Ignoring empty pin current: Ix(u18:2)
+.step ampl=0
+.step ampl=1
+.step ampl=2
+.step ampl=3
+.step ampl=4
+.step ampl=5
 
-Date: Tue Mar 26 20:39:57 2019
-Total elapsed time: 0.343 seconds.
+Date: Tue Apr 02 21:15:40 2019
+Total elapsed time: 2.295 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 1061
-traniter = 478
-tranpoints = 240
-accept = 173
-rejected = 67
-matrix size = 111
-fillins = 128
+totiter = 1107
+traniter = 500
+tranpoints = 235
+accept = 172
+rejected = 63
+matrix size = 147
+fillins = 197
 solver = Normal
-Thread vector: 61.6/23.2[8] 45.9/10.2[8] 26.0/10.2[8] 0.9/1.4[1]  2592/500
-Matrix Compiler1: 12.76 KB object code size  6.3/4.0/[1.7]
-Matrix Compiler2: 13.18 KB object code size  4.5/4.6/[1.5]
+Thread vector: 95.3/38.9[8] 70.2/24.3[8] 41.6/15.9[8] 1.4/3.2[1]  2592/500
+Matrix Compiler1: 18.58 KB object code size  10.8/6.4/[3.2]
+Matrix Compiler2: 18.26 KB object code size  7.0/7.3/[2.1]
 
 
