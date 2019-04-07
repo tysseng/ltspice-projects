@@ -1,0 +1,162 @@
+* C:\git\ltspice-projects\Moog filter - xm8 half volt octave - 12-24-dB with const current sources and overdrive and no VCA.asc
+Q1 N001 N028 N032 0 BC547C
+Q2 N023 N027 N001 0 BC547C
+Q3 N012 N016 N023 0 BC547C
+Q4 N015 N016 N024 0 BC547C
+Q5 N024 N027 N006 0 BC547C
+Q6 N006 N028 N033 0 BC547C
+C1 N024 N023 22n
+C2 N006 N001 22n
+C3 N033 N032 22n
+C4 N015 N012 22n
+Q7 15V N011 N015 0 CA3046
+Q8 15V N011 N012 0 CA3046
+V1 15V 0 15
+R1 N027 N028 1k
+R2 N016 N027 1k
+R3 N011 N016 1k
+R4 15V N011 5k9
+Q9 N032 N036 N038 0 CA3046
+Q10 N033 N037 N038 0 CA3046
+R5 N038 N047 1k
+R6 N036 N042 1k
+R7 N028 N042 1k
+R8 N037 N042 1k
+V2 0 -15V 15
+C7 N035 N034 10µ V=63 Irms=200m Rser=1.3 Lser=0
+R19 N042 0 1k
+C8 N042 0 220µ V=63 Irms=200m Rser=1.3 Lser=0
+V3 Audio 0 SINE(0 5 500) AC 1
+V4 CUTOFF_CV 0 5
+XU2 N013 N012 N010 opamp Aol=100K GBW=10Meg
+XU5 N019 N015 N005 opamp Aol=100K GBW=10Meg
+R11 N010 N013 10k
+R12 N019 N013 5k1
+R13 N019 N005 10k
+R14 N008 N010 820
+R15 N004 N005 820
+R17 N036 N035 120k
+XU7 N025 0 N034 opamp Aol=100K GBW=10Meg
+R24 N034 N025 14.3k
+R25 N025 Audio 100k
+XU8 NC_01 N029 N031 RESO_I_ABC N030 15V -15V NC_02 NC_03 HALF13700
+R26 N030 N037 1k
+R27 N029 N031 51
+R28 P001 N029 50k
+XU1 0 15V P001 pot_lin Rtot=10K wiper=0.5
+R31 N005 N029 200
+R39 N010 N031 200
+Q11 N046 N049 N051 0 CA3046
+Q13 N047 0 N051 0 CA3046
+R18 15V N046 1MEG
+R20 N051 N055 10k
+C9 N055 N046 100p
+XU3 N046 N058 N055 opamp Aol=100K GBW=10Meg
+R21 N058 0 1000k
+XU10 N043 0 N044 opamp Aol=100K GBW=10Meg
+R32 N043 CUTOFF_CV 50k
+R33 N043 P002 270k
+XU4 15V -15V P002 pot_lin Rtot=10K wiper=0.5
+XU12 N004 N008 Output opamp Aol=100K GBW=10Meg
+XU11 15V 0 P003 pot_lin Rtot=10K wiper=0.415
+V7 RESO_CV 0 0
+V8 VCA_CV 0 5
+R9 N044 N049 56k
+R34 N049 0 1k
+R23 P004 N043 68k
+XU9 P004 N044 N044 pot_lin Rtot=50K wiper=0.3
+R36 N043 -15V 270k
+XU14 N003 N001 N002 opamp Aol=100K GBW=10Meg
+XU15 N009 N006 N007 opamp Aol=100K GBW=10Meg
+R37 N002 N003 10k
+R38 N009 N003 5k1
+R40 N009 N007 10k
+Q15 N052 N048 N045 0 PNP
+R41 N050 N045 1MEG
+XU16 N045 0 N048 opamp Aol=100K GBW=10Meg
+XU17 0 -15V N050 pot_lin Rtot=10K wiper=0.5
+R42 N045 VCA_CV 10k
+D1 N048 N045 D
+R43 VCA_I_ABC N052 10k
+Q16 N057 N054 N053 0 PNP
+R44 N056 N053 1MEG
+XU18 N053 0 N054 opamp Aol=100K GBW=10Meg
+XU19 0 -15V N056 pot_lin Rtot=10K wiper=0.5
+R45 P005 RESO_CV 9.1k
+D2 N054 N053 D
+R46 RESO_I_ABC N057 10k
+XU20 P005 NC_04 N053 pot_lin Rtot=20K wiper=0.76
+R16 N046 LIN_FM 100k
+XU21 N022 N018 N026 OVERLOAD_I_ABC N020 15V -15V NC_05 NC_06 HALF13700
+XU22 N020 0 N021 opamp Aol=100K GBW=10Meg
+R29 N018 0 510R
+R30 N026 Output 12k
+R35 N020 N021 18k
+R47 N022 15V 12k
+R48 0 N026 510R
+R22 N025 N021 100k
+Q12 N041 N040 N039 0 PNP
+R49 -15V N039 820k
+XU23 N039 0 N040 opamp Aol=100K GBW=10Meg
+R50 N039 OVERLOAD_CV 5.6k
+D3 N040 N039 D
+R51 OVERLOAD_I_ABC N041 10k
+V5 OVERLOAD_CV 0 0
+R52 N008 0 150k
+R10 P003 N004 220k
+R53 N004 Output 150k
+R54 N017 N005 820
+R55 N014 N010 820
+R56 P006 N014 220k
+XU6 15V 0 P006 pot_lin Rtot=10K wiper=0.415
+.model D D
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.bjt
+.lib opamp.sub
+.lib LTC.lib
+.lib lm13700.sub
+* XM8 moog ladder filter\n0.5V octave\n13Hz to 13kHz with U4 at 0.1\nTODO: Test filter for self oscillation
+.lib LTC.lib
+.lib lm13700.sub
+;ac oct 100 1 50000
+* Flipping inputs here\ncompensates for \ninverting output
+* 3300ppm\ntempco
+* Tracking
+* Centered pot gives about\n10Hz to 10kHz range for\n0 to 5V CV, mix multiple\nCVs to extend range\nor replace 50k resistor
+* 1V/oct mixing point,\nuse 100k input for 1V/oct.\nCV is 0.5V/oct with 50k res
+* 24dB
+* 12dB
+* Reso needs separate buffer\nas it must always be tapped\nat 24dB
+* 24dB
+* 12dB
+* Remove these buffers if \nIf 12/24dB switch not needed.
+;dc V8 0 5 0.1
+* max -434uA on memorymoog, \nmax -488 here.\nAdjust max gain using VCA gain trimmer
+* Deadband adjust,\nadd offset at bottom \nof CV for full off,\n0 to 220mV
+* sum point, 10k\nresistor for similar \nresponse as CV
+* Use 1.5MEG resistor\nto -15V for fixed 0.1V\noffset of CV instead of\nusing potmeter
+* max -73 to -434 uA on memorymoog,\nmax -162 to -536 uA here.
+* Leaving out the 1Meg and\ntrimpots will give I_abc very\nclose to 0 but may not be\nperfect and thus not 100%\noff.
+* Yusynth uses a 1/10 ratio for \nlinear fm vs reference (100k \nvs 1M reference resistor).\nI chose the same ratio here,\nmust be tested in practice.
+* VCA Gain
+* The filter starts distorting when the amplitude > 10Vp.p. \n \nOverload feedback drives the max amplitude \nup to about 24V p.p. with heavy distortion (but\nsoft clipping, not hard)
+.tran 0.01
+.step PARAM AMPL 4 5 1
+* NB: Negative input
+* TODO: CAPS ON OUTPUT
+* Use 22k or higher here for \ncomputer calibrated max \noverload
+* Multiturn
+* Single turn
+* Single turn
+* Single turn
+* Single turn
+* Single turn\n(tested with 20k)
+* Single turn
+* Single turn
+* 5k6 on breadboard!
+* 50k pot (20k seemed too little when using single turn!)\n-- because 20k pot is 16k! 50k is 43k (bad tolerance)
+.lib potentiometer_standard.lib
+.backanno
+.end

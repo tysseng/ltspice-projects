@@ -1,12 +1,13 @@
-Circuit: * C:\git\ltspice-projects\Moog filter - xm8 half volt octave - 12-24-dB with const current sources and overdrive.asc
+Circuit: * C:\git\ltspice-projects\Moog filter - xm8 half volt octave - 12-24-dB with const current sources and overdrive and no VCA.asc
 
 Warning: Multiple definitions of model "pnpl" Type: BJT
 Warning: Multiple definitions of model "npnv" Type: BJT
 WARNING: Less than two connections to node NC_02.  This node is used by Q:U8:N11.
-WARNING: Less than two connections to node NC_05.  This node is used by Q:U6:N11.
-WARNING: Less than two connections to node NC_07.  This node is used by R:U20:2.
+WARNING: Less than two connections to node VCA_I_ABC.  This node is used by R43.
+WARNING: Less than two connections to node NC_04.  This node is used by R:U20:2.
 WARNING: Less than two connections to node LIN_FM.  This node is used by R16.
-WARNING: Less than two connections to node NC_08.  This node is used by Q:U21:N11.
+WARNING: Less than two connections to node NC_05.  This node is used by Q:U21:N11.
+WARNING: Less than two connections to node N017.  This node is used by R54.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
 Gmin = 10
@@ -75,23 +76,25 @@ Ignoring empty pin current: Ix(u22:1)
 Ignoring empty pin current: Ix(u22:2)
 Ignoring empty pin current: Ix(u23:1)
 Ignoring empty pin current: Ix(u23:2)
+.step ampl=4
+.step ampl=5
 
-Date: Sun Apr 07 21:11:27 2019
-Total elapsed time: 0.606 seconds.
+Date: Sun Apr 07 22:02:35 2019
+Total elapsed time: 1.010 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 2893
-traniter = 2304
-tranpoints = 1147
-accept = 1112
-rejected = 35
-matrix size = 141
-fillins = 234
+totiter = 2732
+traniter = 2134
+tranpoints = 1068
+accept = 1064
+rejected = 4
+matrix size = 131
+fillins = 216
 solver = Normal
-Thread vector: 49.9/16.5[7] 36.0/8.3[7] 17.8/7.3[7] 1.3/2.0[1]  2592/500
-Matrix Compiler1: 22.82 KB object code size  10.1/6.5/[2.7]
-Matrix Compiler2: 17.36 KB object code size  5.8/6.1/[2.2]
+Thread vector: 38.5/17.6[5] 22.2/7.3[5] 13.9/6.1[5] 1.0/1.4[1]  2592/500
+Matrix Compiler1: 20.60 KB object code size  8.2/4.5/[1.9]
+Matrix Compiler2: 15.73 KB object code size  5.0/5.6/[1.9]
 
 
